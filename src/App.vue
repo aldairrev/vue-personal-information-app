@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <AppHeader />
-    <InfoForm />
+    <InfoForm @save-info="saveInfo" />
   </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   components: {
     InfoForm,
     AppHeader,
+  },
+  data: () => (
+    {
+      info: null,
+    }
+  ),
+  methods: {
+    saveInfo(newInfo) {
+      this.info = newInfo;
+      console.log(this.info);
+    },
   },
 };
 </script>

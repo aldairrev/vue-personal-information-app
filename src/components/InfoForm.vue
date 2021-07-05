@@ -1,16 +1,21 @@
 <template>
   <div class="info-form">
-    <InfoFormBox1 />
+    <InfoFormBox @save-info="saveInfo" />
   </div>
 </template>
 
 <script>
-import InfoFormBox1 from './InfoFormBox1.vue';
+import InfoFormBox from './InfoFormBox.vue';
 
 export default {
   name: 'InfoForm',
   components: {
-    InfoFormBox1,
+    InfoFormBox,
+  },
+  methods: {
+    saveInfo(newInfo) {
+      this.$emit('save-info', newInfo);
+    },
   },
 };
 </script>
@@ -32,6 +37,8 @@ $padding: 20px;
   padding: 20px;
 }
 .form-step {
+  display: flex;
+  flex-direction: column;
   &__group {
     display: grid;
     gap: 10px;
@@ -70,6 +77,21 @@ $padding: 20px;
     outline: none;
     border: solid 1px gray;
     background: white;
+  }
+  &__btn {
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px 30px;
+    border-radius: $round-corner;
+    outline: none;
+    border: 2px $primary solid;
+    background-color: $primary;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
   }
 }
 </style>
