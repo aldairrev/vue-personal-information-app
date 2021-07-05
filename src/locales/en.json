@@ -1,3 +1,13 @@
 {
-    "title": "Personal Information App"
+    "header": {
+        "title": "Personal Information App"
+    },
+    "form": {
+        "step_number": "Step {number}",
+        "name": "Name",
+        "lastname": "Lastname",
+        "email": "Email",
+        "phone": "Phone",
+        "address": "Address"
+    }
 }
